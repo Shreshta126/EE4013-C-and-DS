@@ -140,17 +140,31 @@ https://github.com/Shreshta126/EE4013-C-and-DS/tree/main/assignment_1/codes
  Let T be a tree with 10 vertices. What is the sum of degrees of all the vertices in T? 
 
 \section{\textbf{Solution}}
-The number of edges connected to a vertex is the degree of the vertex.\\
-Sum degrees of all the vertices will be double the number of edges. In a tree with 10 vertices, number of edges will be equal to 9. 
-Therefore, sum of degrees of the vertices will be equal to 18. 
+\textbf{Definition:} In any graph, the degree \textbf{deg(v)} of a vertex \textbf{v} if defined as the the number of edges that have \textbf{v} as the endpoint.\\
+\\
+The \textbf{degree sum formula} states that, given a graph \textbf{G = (V,E)}
+\begin{align}
+\sum_{v\in V}\deg(v)=2|E|.
+\end{align}
 
+\textbf{Proof:} When two vertices are connected in a graph, degree increases by 1 for both the vertices and sum of degrees increases by 2. Which implies introducing an edge increases the sum of degrees by 2. Hence \emph{sum of degree  = 2$|E|$}.\\
+\\
+The above formula is another form of \textbf{Handshaking lemma}.The lemma states that in any undirected graph, the number of vertices with odd degree is even.
+
+A tree is also a graph with no loops. 
+A tree with \textbf{n} vertices will have \textbf{n-1} edges. So \emph{ sum of degrees of the vertices} will be \textbf{2(n-1)}.\\
+\\
+Given a tree with 10 vertices, number of edges will be equal to 9. 
+Therefore, sum of degrees of the vertices will be equal to 18. 
+\\
 \begin{figure}[!ht]
 \centering
 \subfile{tree}
 \caption{Binary Tree}
 \label{fig:Tree}
 \end{figure} 
-Code for obtaining the sum of degrees of vertices in any tree:
+
+Code for obtaining the sum of degrees of vertices in a tree with n vertices:
 \begin{lstlisting}
 /codes/ee18btech11041.c
 \end{lstlisting}
