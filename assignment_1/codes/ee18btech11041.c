@@ -10,7 +10,7 @@ struct TreeNode
 
 
 
-struct TreeNode* newNode(int data)
+struct TreeNode* newNode(int data)     #creating a node in a tree
 {
     // Allocate memory for new node
     struct TreeNode* node = (struct TreeNode*)malloc(sizeof(struct TreeNode));
@@ -26,14 +26,14 @@ struct TreeNode* newNode(int data)
 }
  
 
-int degrees_tree(struct TreeNode* root)
+int degrees_tree(struct TreeNode* root)      #returns total number of vertices in a tree. 
 {
 	if(root == NULL) return 0;
 
 	return degrees_tree(root->left) + degrees_tree(root->right) +1;		
 }
 
-int sum_of_degrees(struct TreeNode* root)
+int sum_of_degrees(struct TreeNode* root)   #computes the sum of degrees of vertices in a tree
 {
 	int ver = degrees_tree(root);
 	
